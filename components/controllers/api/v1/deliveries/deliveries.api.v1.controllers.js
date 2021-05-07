@@ -23,7 +23,12 @@ router.route('/')
   .post(
     (req, res, next) => handler(validator, req, res, next, validations['mainPost']),
     (req, res, next) => responses(deliveriesCommonServices.create, req, res, next))
-
+    
+router.route('/weight')
+  .get(
+    (req, res, next) => handler(getValidator, req, res, next, validations['weightGet']),
+    (req, res, next) => responses(deliveriesCommonServices.findWeight, req, res, next))   
+     
 router.route('/:id')
   .get(
     (req, res, next) => handler(getValidator, req, res, next, validations['getOne']),
