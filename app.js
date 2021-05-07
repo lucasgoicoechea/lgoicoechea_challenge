@@ -33,7 +33,7 @@ mongoose.connection.on('connected', async () => {
     console.log('MongoDB ensuring indexes FAIL', e);
   }
 });
-
+mongoose.set('debug', true);
 
 // Routes
 import router from './components/router/routes';
